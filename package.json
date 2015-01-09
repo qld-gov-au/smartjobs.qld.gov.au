@@ -1,0 +1,24 @@
+{
+  "name": "smartjobs.qld.gov.au",
+  "version": "0.0.0",
+  "description": "Template integration for SmartJobs",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run lint",
+    "lint": "jshint src\\assets\\smartjobs.js",
+    "lint:checkstyle": "npm run lint -- --reporter checkstyle > checkstyle.xml"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/qld-gov-au/smartjobs.qld.gov.au.git"
+  },
+  "author": "Queensland Government",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/qld-gov-au/smartjobs.qld.gov.au/issues"
+  },
+  "homepage": "https://github.com/qld-gov-au/smartjobs.qld.gov.au",
+  "devDependencies": {
+    "jshint": "latest"
+  }
+}
