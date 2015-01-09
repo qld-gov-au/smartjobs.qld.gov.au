@@ -27,7 +27,7 @@ $(function() {
 
 
 	// adjust sizes of fields on application form
-	var fieldSizes = {
+	fieldSizes = {
 		'in_email' : 40,
 		'in_phone' : 20,
 		'in_contact_addr3' : 20, // suburb
@@ -45,7 +45,7 @@ $(function() {
 	// add upcoming changes alert to home page
 	if ( /jobsearch/.test( location.pathname )) {
 		$( '.border', '#asides' ).eq( 0 ).prepend(
-			
+
 			'<div class="aside feedback">'+
 				'<h2>Changes to SmartJobs</h2>'+
 				'<p>To make SmartJobs easier to use, the search controls, search results and application form have changed.</p>'+
@@ -58,12 +58,12 @@ $(function() {
 			if ($(this).is('#page-feedback-not-useful, #page-feedback-useful') && ! $('#page-feedback').is(':hidden')) {
 				return; // already revealed
 			}
-			
+
 			// Reveal section, and shift focus to revealed section (important for accessibility)
 				if (! $('#page-feedback').is(':hidden')) {
 					$('#page-feedback').hide();
 				}
-				
+
 				window.location.hash = 'page-feedback';
 				$('#page-feedback')
 					.fadeIn()
@@ -71,9 +71,9 @@ $(function() {
 						.attr('tabindex', 0)
 						.focus()
 				;
-				
+
 				$.scrollTo('#page-feedback', 800);
-				
+
 			return false; // prevent link from being followed (default behaviour)
 		};
 
