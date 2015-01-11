@@ -86,7 +86,7 @@ $(function() {
 		.append( '<p>We do not reply to feedback. <a href="https://www.qld.gov.au/contact-us/">Contact us if you need a response</a>.</p>' )
 	;
 
-	if ( ! qg.swe.isProduction() ) {
+	if ( ! qg.swe.isProduction ) {
 		// intercept contact us links
 		$( document ).on( 'click', 'a[href*="://www.qld.gov.au/contact-us/"]', function() {
 			// present contact us options
