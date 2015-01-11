@@ -86,6 +86,22 @@ $(function() {
 		.append( '<p>We do not reply to feedback. <a href="https://www.qld.gov.au/contact-us/">Contact us if you need a response</a>.</p>' )
 	;
 
+	if ( ! qg.swe.isProduction() ) {
+		// intercept contact us links
+		$( document ).on( 'click', 'a[href*="://www.qld.gov.au/contact-us/"]', function() {
+			// present contact us options
+			$( document ).status( 'show', {
+				lightbox: true,
+				status: 'info',
+				title: 'What is your enquiry about?',
+				body: '<ul>' +
+				  '<li><a href="https://www.qld.gov.au/jobs/government/qgov-jobs-feedback/">An advertised position or job application</a></li>' +
+				  '<li><a href="https://www.qld.gov.au/jobs/government/qgov-jobs-feedback/">This website or Smartjobs account</a></li>' +
+				  '<li><a href="https://www.qld.gov.au/contact-us/">A government service</a></li>' +
+				  '</ul>'
+			});
+		});
+	}
 
 });
 }( jQuery ));
