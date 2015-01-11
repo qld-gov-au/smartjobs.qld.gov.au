@@ -88,7 +88,8 @@ $(function() {
 
 	if ( ! qg.swe.isProduction ) {
 		// intercept contact us links
-		$( document ).on( 'click', 'a[href*="://www.qld.gov.au/contact-us/"]', function() {
+		$( document ).on( 'click', 'a[href*="://www.qld.gov.au/contact-us/"]', function( event ) {
+			event.preventDefault();
 			// present contact us options
 			$( document ).status( 'show', {
 				lightbox: true,
@@ -100,6 +101,8 @@ $(function() {
 				  '<li><a href="https://www.qld.gov.au/contact-us/">A government service</a></li>' +
 				  '</ul>'
 			});
+
+			return false;
 		});
 	}
 
