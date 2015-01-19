@@ -97,8 +97,8 @@ $(function() {
 					status: 'info',
 					title: 'What is your enquiry about?',
 					body: '<ul class="intercept">' +
-					  '<li><a href="https://www.qld.gov.au/jobs/government/qgov-jobs-feedback/">An advertised position or job application</a></li>' +
-					  '<li><a href="https://www.qld.gov.au/jobs/government/qgov-jobs-feedback/">This website or Smartjobs account</a></li>' +
+					  '<li><a href="http://qld-dev.ssq.qld.gov.au/services/forms/smart-jobs/smart-jobs-form-A.html">An advertised position or job application</a></li>' +
+					  '<li><a href="http://qld-dev.ssq.qld.gov.au/services/forms/smart-jobs/smart-jobs-form-B.html">This website or Smartjobs account</a></li>' +
 					  '<li><a href="https://www.qld.gov.au/contact-us/">A government service</a></li>' +
 					  '</ul>'
 				});
