@@ -86,7 +86,12 @@ $(function() {
 		.append( '<p>We do not reply to feedback. <a href="https://www.qld.gov.au/contact-us/">Contact us if you need a response</a>.</p>' )
 	;
 
+
 	if ( ! qg.swe.isProduction ) {
+		// rewrite contact link in 'Need help' aside
+		$( 'a' ).filter( '[href="https://www.qld.gov.au/jobs/government/qgov-jobs-feedback/"]' )
+		.attr( 'href', 'http://qld-dev.ssq.qld.gov.au/services/forms/smart-jobs/smart-jobs-form-A.html' );
+
 		// intercept contact us links
 		$( document ).on( 'click', 'a[href*="://www.qld.gov.au/contact-us/"]', function( event ) {
 			if ( $( this ).closest( '.intercept' ).length === 0 ) {
