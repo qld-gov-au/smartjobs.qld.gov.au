@@ -88,9 +88,15 @@ $(function() {
 
 
 	if ( ! qg.swe.isProduction ) {
+		// tweak 'Need help' aside
+		$( '.contact', '#asides' )
+		.removeClass( 'contact' ).addClass( 'help' )
+		.find( 'h2' ).text( 'Need help?' );
+
 		// rewrite contact link in 'Need help' aside
 		$( 'a' ).filter( '[href="https://www.qld.gov.au/jobs/government/qgov-jobs-feedback/"]' )
-		.attr( 'href', 'http://www.qld.gov.au/help/smartjobs/jobs.html' );
+		.attr( 'href', 'http://www.qld.gov.au/help/smartjobs/jobs.html' )
+		.text( 'check our knowledge base' );
 
 		// intercept contact us links
 		$( document ).on( 'click', 'a[href*="://www.qld.gov.au/contact-us/"]', function( event ) {
