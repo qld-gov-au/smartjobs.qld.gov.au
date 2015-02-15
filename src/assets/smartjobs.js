@@ -87,37 +87,35 @@ $(function() {
 	;
 
 
-	if ( ! qg.swe.isProduction ) {
-		// tweak 'Need help' aside
-		$( '.contact', '#asides' )
-		.removeClass( 'contact' ).addClass( 'help' )
-		.find( 'h2' ).text( 'Need help?' );
+	// tweak 'Need help' aside
+	$( '.contact', '#asides' )
+	.removeClass( 'contact' ).addClass( 'help' )
+	.find( 'h2' ).text( 'Need help?' );
 
-		// rewrite contact link in 'Need help' aside
-		$( 'a' ).filter( '[href="https://www.qld.gov.au/jobs/government/qgov-jobs-feedback/"]' )
-		.attr( 'href', 'http://www.qld.gov.au/help/smartjobs/jobs.html' )
-		.text( 'check our knowledge base' );
+	// rewrite contact link in 'Need help' aside
+	$( 'a' ).filter( '[href="https://www.qld.gov.au/jobs/government/qgov-jobs-feedback/"]' )
+	.attr( 'href', 'http://www.qld.gov.au/help/smartjobs/jobs.html' )
+	.text( 'check our knowledge base' );
 
-		// intercept contact us links
-		$( document ).on( 'click', 'a[href*="://www.qld.gov.au/contact-us/"]', function( event ) {
-			if ( $( this ).closest( '.intercept' ).length === 0 ) {
-				event.preventDefault();
-				// present contact us options
-				$( document ).status( 'show', {
-					lightbox: true,
-					status: 'info',
-					title: 'What is your enquiry about?',
-					body: '<ul class="intercept">' +
-					  '<li><a href="http://www.qld.gov.au/help/smartjobs/jobs.html">An advertised position or job application</a></li>' +
-					  '<li><a href="http://www.qld.gov.au/help/smartjobs/technical.html">This website or Smartjobs account</a></li>' +
-					  '<li><a href="https://www.qld.gov.au/contact-us/">A government service</a></li>' +
-					  '</ul>'
-				});
+	// intercept contact us links
+	$( document ).on( 'click', 'a[href*="://www.qld.gov.au/contact-us/"]', function( event ) {
+		if ( $( this ).closest( '.intercept' ).length === 0 ) {
+			event.preventDefault();
+			// present contact us options
+			$( document ).status( 'show', {
+				lightbox: true,
+				status: 'info',
+				title: 'What is your enquiry about?',
+				body: '<ul class="intercept">' +
+				  '<li><a href="http://www.qld.gov.au/help/smartjobs/jobs.html">An advertised position or job application</a></li>' +
+				  '<li><a href="http://www.qld.gov.au/help/smartjobs/technical.html">This website or Smartjobs account</a></li>' +
+				  '<li><a href="https://www.qld.gov.au/contact-us/">A government service</a></li>' +
+				  '</ul>'
+			});
 
-				return false;
-			}
-		});
-	}
+			return false;
+		}
+	});
 
 });
 }( jQuery ));
